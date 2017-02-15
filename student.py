@@ -71,10 +71,12 @@ class GoPiggy(pigo.Pigo):
     def shimmy(self):
         print('shimmy')
         for x in range (5):
+            self.right_rot(90)
             self.servo(30)
             self.encR(3)
             self.servo(140)
             self.encL(3)
+            self.left_rot(90)
 
     ########################
     ### MAIN LOGIC LOOP - the core algorithm of my navigation
