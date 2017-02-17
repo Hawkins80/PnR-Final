@@ -63,28 +63,27 @@ class GoPiggy(pigo.Pigo):
     def dance(self):
         print("Piggy dance")
         ##### WRITE YOUR FIRST PROJECT HERE
-        # self.twirltwist()
+        self.twirltwist()
         self.salsa()
         # self.sprinkler()
         # self.back_it_up()
 
     def twirltwist(self):
         print('twirltwist')
-        for x in range (5):
-            self.encL(72)
+        for x in range (4):
+            self.encL(52)
             self.encR(3)
             self.servo(30)
             self.encL(3)
             self.servo(140)
             self.encR(3)
             self.encL(3)
-            self.encR(72)
+            self.encR(52)
 
 
     def salsa(self):
         print('salsa')
-        for x in range (3):
-            self.encR(52)
+        for x in range (2):
             self.encF(20)
             self.encR(3)
             self.encL(3)
