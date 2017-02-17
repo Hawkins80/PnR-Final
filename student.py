@@ -63,8 +63,8 @@ class GoPiggy(pigo.Pigo):
     def dance(self):
         print("Piggy dance")
         ##### WRITE YOUR FIRST PROJECT HERE
-        # self.twirltwist()
-        # self.salsa()
+        self.twirltwist()
+        self.salsa()
         self.getjiggywitit()
         # self.back_it_up()
 
@@ -97,7 +97,7 @@ class GoPiggy(pigo.Pigo):
 
     def getjiggywitit(self):
         print('getjiggywitit')
-        for x in range (2):
+        for x in range (3):
             self.servo(10)
             self.servo(30)
             self.servo(50)
