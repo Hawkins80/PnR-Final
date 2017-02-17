@@ -71,14 +71,14 @@ class GoPiggy(pigo.Pigo):
     def twirltwist(self):
         print('twirltwist')
         for x in range (5):
-            self.encL(36)
+            self.encL(72)
             self.encR(3)
             self.servo(30)
             self.encL(3)
             self.servo(140)
             self.encR(3)
             self.encL(3)
-            self.encR(36)
+            self.encR(72)
 
 
     def salsa(self):
@@ -90,6 +90,11 @@ class GoPiggy(pigo.Pigo):
             self.encL(3)
             self.encL(3)
             self.encB(50)
+            self.encR(3)
+            self.encR(3)
+            self.encL(3)
+            self.encL(3)
+
 
 
 
