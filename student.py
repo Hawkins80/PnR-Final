@@ -83,7 +83,8 @@ class GoPiggy(pigo.Pigo):
 
     def salsa(self):
         print('salsa')
-        for x in range (2):
+        for x in range (3):
+            self.encR(52)
             self.encF(20)
             self.encR(3)
             self.encL(3)
