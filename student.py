@@ -75,8 +75,9 @@ class GoPiggy(pigo.Pigo):
         ##### WRITE YOUR FIRST PROJECT HERE
         # self.twirltwist()
         # self.salsa()
-        self.getjiggywitit()
-        # self.back_it_up()
+        for x in range(3):
+            self.getjiggywitit()
+        self.rockford()
 
     def twirltwist(self):
         print('twirltwist')
@@ -107,7 +108,7 @@ class GoPiggy(pigo.Pigo):
 
     def getjiggywitit(self):
         print('getjiggywitit')
-        for y in range(4):
+        for y in range(3):
             for x in range(20,160,10):
                 self.servo(x)
         self.encF(30)
@@ -115,7 +116,13 @@ class GoPiggy(pigo.Pigo):
         self.encL(20)
         self.encB(30)
 
-
+    def rockford(self):
+        print('rockford')
+        for x in range(3):
+            self.encF(20)
+            self.encL(20)
+            self.encB(20)
+            self.encR(20)
 
     ########################
     ### MAIN LOGIC LOOP - the core algorithm of my navigation
