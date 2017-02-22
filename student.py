@@ -111,7 +111,7 @@ class GoPiggy(pigo.Pigo):
 
     def getjiggywitit(self):
         print('getjiggywitit')
-        for y in range(3):
+        for y in range(2):
             for x in range(20,160,10):
                 self.servo(x)
         self.encF(30)
