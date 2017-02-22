@@ -107,25 +107,13 @@ class GoPiggy(pigo.Pigo):
 
     def getjiggywitit(self):
         print('getjiggywitit')
-        for x in range(5):
-            self.servo(10)
-            self.servo(30)
-            self.servo(50)
-            self.servo(70)
-            self.servo(90)
-            self.servo(110)
-            self.servo(130)
-            self.servo(10)
-            self.servo(30)
-            self.servo(50)
-            self.servo(70)
-            self.servo(90)
-            self.servo(110)
-            self.servo(130)
-            self.encF(30)
-            self.encR(20)
-            self.encL(20)
-            self.encB(30)
+        for y in range(2):
+            for x in range(20,160,10):
+                self.servo(x)
+        self.encF(30)
+        self.encR(20)
+        self.encL(20)
+        self.encB(30)
 
 
 
