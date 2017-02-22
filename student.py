@@ -63,7 +63,9 @@ class GoPiggy(pigo.Pigo):
     def sweep(self):
         for x in range(20,160,2):
             self.servo(x)
-            if self.dist() < 30:
+            if self.dist() > 50:
+                print("Lets dance!")
+            if self.dist() < 50:
                 print("Abort mission")
                 break
 
