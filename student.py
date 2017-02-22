@@ -64,9 +64,9 @@ class GoPiggy(pigo.Pigo):
         for y in range(3):
             for x in range(self.MIDPOINT - 60, self.MIDPOINT + 60,2):
                 self.servo(x)
-                if self.dist() > 50:
+                if self.dist() > 30:
                     print("Lets dance!")
-                if self.dist() < 50:
+                if self.dist() < 30:
                     print("Abort mission")
                     return
                 self.encR(7)
