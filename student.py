@@ -62,7 +62,7 @@ class GoPiggy(pigo.Pigo):
         menu.get(ans, [None, error])[1]()
 
     def count_obstacles(self):
-        for x in range(4):
+        for x in range(1):
         # run a scan
             self.wide_scan()
         # count how many obstacles found
@@ -91,7 +91,7 @@ class GoPiggy(pigo.Pigo):
                     # increase count of obstacles
                     counter += 1
         print('Total number of obstacles inn this scan: ' + str(counter))
-        self.encL(90)
+        self.encL(50)
         return counter
 
 ###### 3/3 classwork ######
