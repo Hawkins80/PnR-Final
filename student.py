@@ -50,6 +50,7 @@ class GoPiggy(pigo.Pigo):
                 "c": ("Calibrate", self.calibrate),
                 "w": ("Sweep", self.sweep),
                 "o": ("Count Obstacle", self.count_obstacles),
+                "t": ("Total Obstacles", self.total_obstacles()),
                 "s": ("Check status", self.status),
                 "q": ("Quit", quit)
                 }
@@ -62,9 +63,8 @@ class GoPiggy(pigo.Pigo):
         menu.get(ans, [None, error])[1]()
 
     def count_obstacles(self):
-        for x in range(1):
         # run a scan
-            self.wide_scan()
+        self.wide_scan()
         # count how many obstacles found
         counter = 0
         # starting state assumes no obstacle
@@ -91,16 +91,15 @@ class GoPiggy(pigo.Pigo):
                     # increase count of obstacles
                     counter += 1
         print('Total number of obstacles inn this scan: ' + str(counter))
-        self.encL(50)
         return counter
 
 ###### 3/3 classwork ######
     def total_obstacles(self):
         counter = 0
-        counter += self.count_obstacles()
-
-
-
+        for x in range(4):
+            counter += self.count_obstacles()
+            self.encR(6)
+        print('Total number of obstacles inn this scan: ' + str(counter))
 
     def sweep(self):
         for x in range(self.MIDPOINT - 60, self.MIDPOINT + 60, 2):
