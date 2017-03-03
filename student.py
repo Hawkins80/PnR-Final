@@ -93,13 +93,13 @@ class GoPiggy(pigo.Pigo):
         print('Total number of obstacles inn this scan: ' + str(counter))
         return counter
 
-###### 3/3 classwork ######
+    # full 360 degree sweep with obstacle counter
     def total_obstacles(self):
         counter = 0
         for x in range(4):
             counter += self.count_obstacles()
-            self.encR(6)
-        print('Total number of obstacles inn this scan: ' + str(counter))
+            self.encR(9)
+        print('Total number of obstacles in this scan: ' + str(counter))
 
     def sweep(self):
         for x in range(self.MIDPOINT - 60, self.MIDPOINT + 60, 2):
