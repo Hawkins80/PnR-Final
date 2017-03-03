@@ -64,7 +64,7 @@ class GoPiggy(pigo.Pigo):
     def count_obstacles(self):
         for x in range(4):
         # run a scan
-        self.wide_scan()
+            self.wide_scan()
         # count how many obstacles found
         counter = 0
         # starting state assumes no obstacle
