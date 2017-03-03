@@ -49,6 +49,7 @@ class GoPiggy(pigo.Pigo):
                 "d": ("Dance", self.dance),
                 "c": ("Calibrate", self.calibrate),
                 "w": ("Sweep", self.sweep),
+                "o": ("Count Obstacle", self.count_obstacles),
                 "s": ("Check status", self.status),
                 "q": ("Quit", quit)
                 }
