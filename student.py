@@ -224,12 +224,12 @@ class GoPiggy(pigo.Pigo):
         # this is the loop part of the "main logic loop"
         while self.is_clear():
             self.encF(10)
+        self.restore_heading()
         answer = self.choose_path()
         if answer == "left":
             self.encL(6)
         elif answer == "right":
             self.encR(6)
-        self.restore_heading()
 
 ####################################################
 ############### STATIC FUNCTIONS
