@@ -222,9 +222,9 @@ class GoPiggy(pigo.Pigo):
         print("[ Press CTRL + C to stop me, then run stop.py ]\n")
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         # this is the loop part of the "main logic loop"
-        for x in range (5):
+        for x in range(10):
             if self.is_clear():
-                self.encF(5)
+                self.encF(10)
             answer = self.choose_path()
             if answer == "left":
                 self.encL(6)
