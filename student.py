@@ -217,20 +217,26 @@ class GoPiggy(pigo.Pigo):
     ### (kind of a big deal)
     ########################
 
-    def nav(self):
+    def final(self):
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         print("[ Press CTRL + C to stop me, then run stop.py ]\n")
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         # this is the loop part of the "main logic loop"
-        while self.is_clear():
-            self.encF(10)
-        self.restore_heading()
-        self.encF(10)
-        answer = self.choose_path()
-        if answer == "left":
-            self.encL(6)
-        elif answer == "right":
-            self.encR(6)
+        while True:
+            if self.is_clear():
+                self.cruise()
+            answer = self.choose_path()
+            if answer == "left":
+                self.encL(6)
+            elif answer == "right":
+                self.encR(6)
+
+        def cruise(self):
+            self.fwd()  # I added this to pigo
+            while self.is_clear():
+                time.sleep(.1)
+            self.stop()
+            self.encB(3)
 
 ####################################################
 ############### STATIC FUNCTIONS
