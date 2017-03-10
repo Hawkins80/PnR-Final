@@ -217,7 +217,7 @@ class GoPiggy(pigo.Pigo):
     ### (kind of a big deal)
     ########################
 
-    def final(self):
+    def nav(self):
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         print("[ Press CTRL + C to stop me, then run stop.py ]\n")
         print("-----------! NAVIGATION ACTIVATED !------------\n")
