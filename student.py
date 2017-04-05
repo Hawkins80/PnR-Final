@@ -221,7 +221,7 @@ class GoPiggy(pigo.Pigo):
     ### (kind of a big deal)
     ########################
 
-# navigate forward
+# navigate forward for dex
     def nav(self):
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         print("[ Press CTRL + C to stop me, then run stop.py ]\n")
@@ -231,11 +231,14 @@ class GoPiggy(pigo.Pigo):
             if self.is_clear():
                 self.cruise()
             answer = self.choose_path()
+            # if something is seen turn left
             if answer == "left":
-                self.encL(6)
+                self.encL(4)
+            # if something is seen turn left
             elif answer == "right":
-                self.encR(6)
+                self.encR(4)
 
+# cruise method for dex
     def cruise(self):
         # look forward
         self.servo(self.MIDPOINT)
