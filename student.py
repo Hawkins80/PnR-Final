@@ -167,6 +167,7 @@ class GoPiggy(pigo.Pigo):
             self.getjiggywitit()
         self.rockford()
 
+#start of twirltwist
     def twirltwist(self):
         print('twirltwist')
         for x in range(3):
@@ -179,6 +180,7 @@ class GoPiggy(pigo.Pigo):
             self.encL(3)
             self.encR(52)
 
+#start of salsa
     def salsa(self):
         print('salsa')
         for x in range(2):
@@ -194,6 +196,7 @@ class GoPiggy(pigo.Pigo):
             self.encL(3)
             self.encR(52)
 
+# start of getjiggywitit
     def getjiggywitit(self):
         print('getjiggywitit')
         for y in range(2):
@@ -204,6 +207,7 @@ class GoPiggy(pigo.Pigo):
         self.encL(20)
         self.encB(30)
 
+# start of rockford
     def rockford(self):
         print('rockford')
         for x in range(3):
@@ -217,6 +221,7 @@ class GoPiggy(pigo.Pigo):
     ### (kind of a big deal)
     ########################
 
+# navigate forward
     def nav(self):
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         print("[ Press CTRL + C to stop me, then run stop.py ]\n")
@@ -232,10 +237,15 @@ class GoPiggy(pigo.Pigo):
                 self.encR(6)
 
     def cruise(self):
-        self.fwd()  # I added this to pigo
-        while self.is_clear():
+        # look forward
+        self.servo(self.MIDPOINT)
+        # start driving
+        self.fwd()
+        # keep driving as long as distance is safe
+        while self.dist() > self.STOP_DIST:
             time.sleep(.075)
         self.stop()
+        # if something is seen, move backward
         self.encB(3)
 
 ####################################################
