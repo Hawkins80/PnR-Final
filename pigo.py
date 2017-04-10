@@ -158,7 +158,7 @@ class Pigo(object):
 
     def is_clear(self):
         print("Running the is_clear method.")
-        for x in range((self.MIDPOINT - 25), (self.MIDPOINT + 25), 5):
+        for x in range((self.MIDPOINT - 15), (self.MIDPOINT + 15), 5):
             servo(x)
             time.sleep(.05)
             scan1 = us_dist(15)
