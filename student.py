@@ -230,6 +230,7 @@ class GoPiggy(pigo.Pigo):
         while True:
             if self.is_clear():
                 self.cruise()
+            # dex chooses path
             answer = self.choose_path()
             # if something is seen turn left
             if answer == "left":
