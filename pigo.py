@@ -158,18 +158,18 @@ class Pigo(object):
 
     def is_clear(self):
         print("Running the is_clear method.")
-        for x in range((self.MIDPOINT - 15), (self.MIDPOINT + 15), 5):
+        for x in range((self.MIDPOINT - 25), (self.MIDPOINT + 25), 5):
             servo(x)
-            time.sleep(.1)
+            time.sleep(.05)
             scan1 = us_dist(15)
-            time.sleep(.1)
+            time.sleep(.05)
             # double check the distance
             scan2 = us_dist(15)
-            time.sleep(.1)
+            time.sleep(.05)
             # if I found a different distance the second time....
             if abs(scan1 - scan2) > 2:
                 scan3 = us_dist(15)
-                time.sleep(.1)
+                time.sleep(.05)
                 # take another scan and average the three together
                 scan1 = (scan1 + scan2 + scan3) / 3
             self.scan[x] = scan1
