@@ -234,10 +234,10 @@ class GoPiggy(pigo.Pigo):
             answer = self.choose_path()
             # if something is seen turn left
             if answer == "left":
-                self.encL(4)
+                self.encL(2)
             # if something is seen turn left
             elif answer == "right":
-                self.encR(4)
+                self.encR(2)
 
 # cruise method for dex
     def cruise(self):
