@@ -253,9 +253,9 @@ class GoPiggy(pigo.Pigo):
             if counter % 4 == 0:
                 self.servo(self.MIDPOINT)
             elif counter % 3 == 0:
-                self.servo(self.MIDPOINT + 20)
+                self.servo(self.MIDPOINT + 40)
             elif counter % 2 == 0:
-                self.servo(self.MIDPOINT - 20)
+                self.servo(self.MIDPOINT - 40)
             else:
                 self.servo(self.MIDPOINT)
         self.stop()
