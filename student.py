@@ -228,6 +228,7 @@ class GoPiggy(pigo.Pigo):
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         # this is the loop part of the "main logic loop"
         while True:
+            # check if the path is clear
             if self.is_clear():
                 self.cruise()
             # dex chooses path
@@ -245,9 +246,18 @@ class GoPiggy(pigo.Pigo):
         self.servo(self.MIDPOINT)
         # start driving
         self.fwd()
+        counter = 1
         # keep driving as long as distance is safe
         while self.dist() > self.STOP_DIST:
-            time.sleep(.075)
+            counter += 1
+            if counter % 4 == 0:
+                self.servo(self.MIDPOINT)
+            elif counter % 3 == 0:
+                self.servo(self.MIDPOINT + 20)
+            elif counter % 2 == 0:
+                self.servo(self.MIDPOINT - 20)
+            else:
+                self.servo(self.MIDPOINT)
         self.stop()
         # if something is seen, move backward
         self.encB(3)
