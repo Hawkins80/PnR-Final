@@ -157,7 +157,7 @@ class GoPiggy(pigo.Pigo):
         print("Piggy dance")
         ##### WRITE YOUR FIRST PROJECT HERE
 
-    #YOU DECIDE: How does your GoPiggy dance?
+    #How GoPiggy will dance
     def dance(self):
         print("Piggy dance")
         ##### WRITE YOUR FIRST PROJECT HERE
@@ -235,10 +235,10 @@ class GoPiggy(pigo.Pigo):
             answer = self.choose_path()
             # if something is seen turn left
             if answer == "left":
-                self.encL(2)
+                self.encL(3)
             # if something is seen turn left
             elif answer == "right":
-                self.encR(2)
+                self.encR(3)
 
 # cruise method for dex
     def cruise(self):
@@ -255,8 +255,8 @@ class GoPiggy(pigo.Pigo):
             elif counter % 3 == 0:
                 self.servo(self.MIDPOINT + 40)
             elif counter % 2 == 0:
-                self.servo(self.MIDPOINT - 40)
             else:
+                self.servo(self.MIDPOINT - 40)
                 self.servo(self.MIDPOINT)
         self.stop()
         # if something is seen, move backward
