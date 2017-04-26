@@ -17,11 +17,11 @@ class GoPiggy(pigo.Pigo):
         print("Your piggy has be instantiated!")
         # Our servo turns the sensor. What angle of the servo( ) method sets it straight?
         self.MIDPOINT = 90
-        # YOU DECIDE: How close can an object get (cm) before we have to stop?
+        # distance before Dex decides to stop
         self.STOP_DIST = 30
-        # YOU DECIDE: What left motor power helps straighten your fwd()?
+        # speed chosen to allow Dex to properly cruise and scan
         self.LEFT_SPEED = 125
-        # YOU DECIDE: What left motor power helps straighten your fwd()?
+        # speed chosen to allow Dex to properly cruise and scan
         self.RIGHT_SPEED = 125
         # This one isn't capitalized because it changes during runtime, the others don't
         self.turn_track = 0
@@ -161,13 +161,13 @@ class GoPiggy(pigo.Pigo):
     def dance(self):
         print("Piggy dance")
         ##### WRITE YOUR FIRST PROJECT HERE
-        # self.twirltwist()
-        # self.salsa()
+        self.twirltwist()
+        self.salsa()
         for x in range(3):
             self.getjiggywitit()
         self.rockford()
 
-#start of twirltwist
+# start of twirltwist
     def twirltwist(self):
         print('twirltwist')
         for x in range(3):
@@ -180,7 +180,7 @@ class GoPiggy(pigo.Pigo):
             self.encL(3)
             self.encR(52)
 
-#start of salsa
+# start of salsa
     def salsa(self):
         print('salsa')
         for x in range(2):
@@ -221,7 +221,7 @@ class GoPiggy(pigo.Pigo):
     ### (kind of a big deal)
     ########################
 
-# navigate forward for dex
+# navigate forward for Dex
     def nav(self):
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         print("[ Press CTRL + C to stop me, then run stop.py ]\n")
@@ -231,16 +231,16 @@ class GoPiggy(pigo.Pigo):
             # check if the path is clear
             if self.is_clear():
                 self.cruise()
-            # dex chooses path
+            # Dex chooses path
             answer = self.choose_path()
-            # if something is seen turn left
+            # allows Dex to turn left
             if answer == "left":
-                self.encL(2)
-            # if something is seen turn left
+                self.encL(3)
+            # allows Dex to turn right
             elif answer == "right":
-                self.encR(2)
+                self.encR(3)
 
-# cruise method for dex
+# cruise method for Dex
     def cruise(self):
         # look forward
         self.servo(self.MIDPOINT)
@@ -249,13 +249,18 @@ class GoPiggy(pigo.Pigo):
         counter = 1
         # keep driving as long as distance is safe
         while self.dist() > self.STOP_DIST:
+            # hand made counter that allows dex to check his shoulders while driving
             counter += 1
+            # check middle if number is divisible by 4
             if counter % 4 == 0:
                 self.servo(self.MIDPOINT)
+            # check left if number is divisible by 3
             elif counter % 3 == 0:
                 self.servo(self.MIDPOINT + 40)
+            # check right if number is divisible by 2
             elif counter % 2 == 0:
                 self.servo(self.MIDPOINT - 40)
+            # if number is not divisible by 4,3, or 2 check middle
             else:
                 self.servo(self.MIDPOINT)
         self.stop()
